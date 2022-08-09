@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch image & grid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>image grid</h1>
+        <p>click the button to chenge the grid view</p>
+        <div class="icon">
+            <i class="bi bi-square-fill" onclick="one()"></i>
+            <i class="bi bi-grid-fill" onclick="two()"></i>
+            <i class="bi bi-grid-3x3-gap-fill" onclick="four()"></i>
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="column column1"></div>
+        <div class="column column2"></div>
+        <div class="column column3"></div>
+        <div class="column column4"></div>
+    </div>
+</body>
+<script>
+    let _key = "RSzM83D5_iJFgXKZJo_SkaHKfRv5IGNqLX20Fhr4oPA"
+   let  _columns = document.querySelectorAll(".column")
+
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 4; j++) {
+            let x = parseInt(Math.random() * 500) + 100
+            let y = parseInt(Math.random() * 300)+100
+            console.log(x)
+            fetch("https://picsum.photos/" + x + "/" + y)
+                .then(Response => {
+                    let newelement = document.createElement("img")
+                    newelement.setAttribute("src", Response.url)
+                    _columns[j].appendChild(newelement)
+                })
+        }
+    }
+    function one(){
+        _columns.forEach(item=>item.style.width="100%")
+    }
+    function two(){
+        _columns.forEach(item=>item.style.width="50%")
+    }
+    function four(){
+        _columns.forEach(item=>item.style.width="25%")
+    }
+</script>
+
+</html>

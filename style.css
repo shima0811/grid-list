@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.header h1 {
+  padding: 10px 0;
+}
+
+.header .icon {
+  background: #4aa3f1;
+  margin: 30px auto;
+  padding: 10px 0;
+}
+
+.header .icon > i {
+  margin: 0  10px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header .icon > i:hover {
+  color: #222;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.gallery > .column {
+  width: 25%;
+}
+
+.gallery > .column > img {
+  width: 100%;
+  padding: 2px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    margin: 20px auto;
+    text-align: center;
+    h1{
+        padding: 10px 0;
+    }
+    .icon{
+        background: rgb(74, 163, 241);
+        margin: 30px auto;
+        padding: 10px 0;
+        >i{
+            margin:0  10px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.5s;
+            &:hover{
+                color: #222;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    >.column{
+        width: 25%;
+        >img{
+            width: 100%;
+            padding: 2px;
+            object-fit: cover;
+            position: relative;
+
+        }
+    }
+}
